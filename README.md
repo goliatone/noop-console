@@ -1,6 +1,6 @@
 # Noop Console
 
-noop console, replace console method calls with noops.
+JavaScript [noop][wiki] console, replace console method calls with no-operations.
 
 Useful to silence a module logging during testing.
 
@@ -29,3 +29,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## License
 Copyright (c) 2016 goliatone  
 Licensed under the MIT license.
+
+
+[wiki]: https://en.wikipedia.org/wiki/NOP
