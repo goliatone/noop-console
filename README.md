@@ -2,28 +2,41 @@
 
 JavaScript [noop][wiki] console, replace console method calls with no-operations.
 
-Useful to silence a module logging during testing.
+Useful to silence all logging- i.e. during testing- or just from one module.
 
 ## Getting Started
 Install the module with: `npm install noop-console`
 
 ## Examples
+Replace global `console`:
 
-`my-module.js`:
+```js
+require('noop-console')(console);
+```
+
+You can undo:
+
+```js
+console._restore();
+```
+
+If you create abstract modules with a `logger` property that references the standard console so that the actual logger implementation is defined outside the module, you can override this with a `noop-console`.
+
+`module.js`:
 ```js
 function MyModule(){}
 MyModule.prototype.logger = console;
 ```
 
-`test.js`:
+`my_test.js`:
 ```javascript
-var MyModule = require('my-module');
+var MyModule = require('./module');
 MyModule.prototype.logger = require('noop-console')();
 ```
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+* 2016-11-24 v.0.4.0: Added `_restore`
+* 2016-11-23 v.0.3.0: Take in `console` reference to mute.
 * 2016-09-02 v.0.1.0: Initial release
 
 ## License
