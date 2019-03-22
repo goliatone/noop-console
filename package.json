@@ -2,7 +2,7 @@
   "name": "noop-console",
   "title": "Noop Console",
   "description": "noop console, replace console method calls with noops",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "homepage": "https://github.com/goliatone/noop-console",
   "author": {
     "name": "goliatone",
